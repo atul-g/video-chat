@@ -10,9 +10,10 @@ function App() {
                 <Route exact path='/'>
                     <Home />
                 </Route>
-                <Route path='/meet/:meetid'>
-                    <Meet />
+
+                <Route path='/meet/:meetId' children={<Meet />}>
                 </Route>
+
                 <Route path='*'>
                     <Error />
                 </Route>

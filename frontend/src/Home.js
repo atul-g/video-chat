@@ -1,18 +1,13 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import { v4 as uuidv4, validate as uuidValidate } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 const Home = () => {
     const history = useHistory();
 
     const handleJoinMeet = () => {
         let inputMeetId = document.querySelector('[name="input-meetid"]').value;
-        
-        if (uuidValidate(inputMeetId)) {
-            history.push(`/meet/${inputMeetId}`)
-        } else {
-            history.push('/Error')
-        }
+        history.push(`/meet/${inputMeetId}`)
     }
 
     return (
