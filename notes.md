@@ -33,4 +33,12 @@
 
 
     ```
-        
+2. During development, I let my server.js run (after the npm build in client/).
+    BUT, i then i go to client/, and run `npm start`, so now I can open
+    the react app with hot reload, but there is also my server running, so
+    any connections my react app makes (remember proxy in package.json), it
+    gets served by the server.
+
+### Peerjs
+1. For server: `npm i peer` - installs PeerServer
+2. For client: `npm i peerjs`
