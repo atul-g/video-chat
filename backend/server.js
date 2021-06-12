@@ -50,5 +50,5 @@ io.on('connection', socket => {
 
 const port = process.env.PORT || 5000;
 server.listen(port, () => {
-    console.log('Server started at port 5000')
+    console.log(`Server started at port ${port}`)
 })

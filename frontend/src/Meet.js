@@ -103,20 +103,15 @@ const ValidMeet = (meetId) => {
         port: '5000'    //nodejs server is on 5000
     })
 
-    peer.on('open', id => {
-        console.log(id)
-        socket.emit('join-room', meetId, id);
-    })
-
     return (
         <>
             <h2>{`${meetId}`}</h2>
-            <VideoSection socket={socket} peer={peer} />
+            <VideoSection meetId={meetId} socket={socket} peer={peer} />
         </>
     );
 }
 
-const VideoSection = ({socket, peer}) => {
+const VideoSection = ({meetId, socket, peer}) => {
     //this is called after component is rendered
     useEffect(() => {
         let myVidStream;
@@ -151,6 +146,11 @@ const VideoSection = ({socket, peer}) => {
                 //and creates a video tag and attaches HIS STREAM to out
                 //video tag.
             })
+        })
+
+        peer.on('open', id => {
+            console.log(id)
+            socket.emit('join-room', meetId, id);
         })
 
         //TODO: POSSIBLE CLEANUP FUNCTIONS, ON-RERENDERING/STATE CHANGES
