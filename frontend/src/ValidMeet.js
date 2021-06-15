@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import io from 'socket.io-client'
 import  Peer from 'peerjs'
 
 import VideoSection from './VideoSection'
 import ChatSection from './ChatSection'
 import BottomBar from './BottomBar'
+import ThemeButton from './ThemeButton'
+
+import { ThemeContext } from './contexts/ThemeContext'
 
 const ValidMeet = (meetId) => {
+    const { darkMode } = useContext(ThemeContext);
+    console.log(`from ValidMeet: ${darkMode}`)
 
     //leaving the arguemnt of io as blank, this will make it connect to the
     //"/" by default
@@ -23,6 +28,7 @@ const ValidMeet = (meetId) => {
         <>
             <h2>{`${meetId}`}</h2>
             <VideoSection meetId={meetId} socket={socket} peer={peer} />
+            <ThemeButton />
             <ChatSection />
             <BottomBar />
         </>

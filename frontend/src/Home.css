@@ -1,0 +1,85 @@
+#home-card {
+	margin-top: 3rem;
+	margin-left: 30rem; margin-right: 30rem;
+	padding: 3rem;
+	font-size: 1.5rem;
+	border-radius: 20px;
+	box-shadow: 0 0 0px 10px #393E46;
+	background: #fff;
+}
+
+.intro-text h1 {
+	font-weight: bold;
+	font-size: 4rem;
+}
+
+.intro-text p {
+	font-size: 2rem;
+}
+
+.span-color-text {
+	color: #0d6efd;
+}
+
+.meet-join {
+	padding: 2rem 0;
+}
+
+.meet-join-or {
+	text-align: center;
+	margin: 1rem 0;
+}
+
+#home-card .col {
+	padding: 0 1rem;
+}
+
+#input-meetid {
+	display: block;
+	padding: 0;
+	width: 100%;
+}
+
+.svg-curves {
+	z-index: -1;
+	margin-top: -6rem;
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1300px) {
+	.intro-text h1 {
+		font-size: 3rem;
+	}
+
+	#home-card {
+		margin: 2rem 5rem;
+	}
+
+	.svg-curves {
+		margin-top: -1.5rem;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	#home-card {
+		margin: 1rem 2rem 4rem;
+		padding: 0;
+		border-radius: 0;
+		box-shadow: 0 0 0px 0px #fff;
+	}
+
+	.meet-join {
+		padding-bottom: 0;
+	}
+
+	.intro-text h1 {
+		font-size: 3rem;
+	}
+
+	.intro-text p {
+		font-size: 1.3rem;
+	}
+
+	.svg-curves {
+		margin-top: 0rem;
+	}
+}
