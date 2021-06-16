@@ -2,3 +2,18 @@ html, body, #root {
 	height: 100%;
 	width: 100%;
 }
+
+/** color scheme for the website **/
+:root {
+	--l1: #0d6efd; /* l1 - 'light theme colour 1' - bright blue color */
+	--l2: white; /* l2 - 'light theme colour 2' - var(--l2) in this case */
+	--l3: black; /* this is for font in light theme */
+
+	--d1: #10e7dc;
+	--d2: black;
+	--d3: white; /* main font */
+}
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+}

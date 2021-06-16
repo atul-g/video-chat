@@ -1,12 +1,48 @@
+.home-root-light {
+	background: var(--l2);
+}
+
+.home-root-dark {
+	background: var(--d2);
+}
+
 #home-card {
 	margin-top: 3rem;
 	margin-left: 30rem; margin-right: 30rem;
 	padding: 3rem;
 	font-size: 1.5rem;
 	border-radius: 20px;
-	box-shadow: 0 0 0px 10px #393E46;
-	background: #fff;
 }
+
+.home-dark {
+	color: var(--d3);
+	box-shadow: 0 0 0px 5px var(--d1);
+}
+
+.home-light {
+	color: var(--l3);
+	box-shadow: 0 0 0px 5px #393E46;
+}
+
+/* for making custom color for bootstrap button during dark mode */
+.btn-secondary, .btn-secondary:hover, .btn-secondary:active, .btn-secondary:visited {
+	background-color: var(--d1) !important;
+	border-color: var(--d1) !important;
+	color: var(--d2) !important;
+}
+
+.btn-outline-secondary, .btn-outline-secondary:focus {
+	border-color: var(--d1) !important;
+	color: var(--d1) !important;
+}
+
+.btn-outline-secondary:hover, .btn-outline-secondary:active {
+	background-color: var(--d1) !important;
+	border-color: var(--d1) !important;
+	color: var(--d2) !important;
+}
+
+/** custom color for dark mode boostrap button end **/
 
 .intro-text h1 {
 	font-weight: bold;
@@ -17,8 +53,12 @@
 	font-size: 2rem;
 }
 
-.span-color-text {
-	color: #0d6efd;
+.span-color-light {
+	color: var(--l1);
+}
+
+.span-color-dark {
+	color: var(--d1);
 }
 
 .meet-join {
@@ -43,6 +83,14 @@
 .svg-curves {
 	z-index: -1;
 	margin-top: -6rem;
+}
+
+.svg-path-light {
+	fill: var(--l1);
+}
+
+.svg-path-dark {
+	fill: var(--d1);
 }
 
 @media only screen and (min-width: 700px) and (max-width: 1300px) {

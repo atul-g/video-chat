@@ -1,5 +1,5 @@
 #theme-button {
-	margin: 1rem;
+	padding: 1rem;
 }
 
 .switch {
@@ -24,7 +24,6 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #ccc;
 	-webkit-transition: .4s;
 	transition: .4s;
 }
@@ -36,7 +35,6 @@
 	width: 26px;
 	left: 4px;
 	bottom: 4px;
-	background-color: white;
 	-webkit-transition: .4s;
 	transition: .4s;
 }
@@ -58,18 +56,18 @@ input:checked + .slider:before {
 
 /** light theme **/
 .slider-light {
-	background-color: #0d6efd;
+	background-color: var(--l1);
 }
 
 .slider-light:before {
-	background-color: white;
+	background-color: var(--l2);
 }
 
 /** dark theme **/
 .slider-dark {
-	background-color: white;
+	background-color: var(--d1);
 }
 
 .slider-dark:before {
-	background-color: black;
+	background-color: var(--d2);
 }

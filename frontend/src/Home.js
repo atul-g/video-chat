@@ -21,15 +21,17 @@ const Home = () => {
         history.push(`/meet/${inputMeetId}`)
     }
 
+    const buttonVariant = darkMode ? "secondary" : "primary";
+
     return (
-        <>
+        <div className={darkMode ? "home-root-dark" : "home-root-light"}>
             <ThemeButton />
-            <div id="home-card" className={darkMode ? "home-dark" : "home"}>
+            <div id="home-card" className={darkMode ? "home-dark" : "home-light"}>
                 <Row>
                     <Col sm={12} lg={6}>
                         <div className="intro-text">
                             <h1>
-                                <span className="span-color-text">Connect</span>
+                                <span className={darkMode ? "span-color-dark" : "span-color-light"}>Connect</span>
                                 &nbsp;with your friends instantly!
                             </h1>
                             <p>
@@ -41,13 +43,13 @@ const Home = () => {
                     <Col sm={12} lg={6}>
                         <div className="meet-join">
                             <Link to={`/meet/${uuidv4()}`}>
-                                <Button variant="primary" size="lg" block>Create new meet</Button>
+                                <Button variant={buttonVariant} size="lg" block>Create new meet</Button>
                             </Link>
                             <p className="meet-join-or"> or </p>
 
                             <input id="input-meetid" type="text" name="input-meetid" placeholder=" Enter a Meet ID" />
                             <br />
-                            <Button variant="outline-primary" size="lg" block type="button" onClick={handleJoinMeet}>Join meet</Button>
+                            <Button variant={"outline-"+`${buttonVariant}`} size="lg" block type="button" onClick={handleJoinMeet}>Join meet</Button>
                         </div>
                     </Col>
                 </Row>
@@ -56,10 +58,10 @@ const Home = () => {
             to get rid of the white thin line between svg and the following div
             tag */}
             <svg className="svg-curves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#0d6efd" fillOpacity="1" d="M0,32L60,53.3C120,75,240,117,360,154.7C480,192,600,224,720,218.7C840,213,960,171,1080,138.7C1200,107,1320,85,1380,74.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                <path className={darkMode ? "svg-path-dark" : "svg-path-light"} fill="#0d6efd" fillOpacity="1" d="M0,32L60,53.3C120,75,240,117,360,154.7C480,192,600,224,720,218.7C840,213,960,171,1080,138.7C1200,107,1320,85,1380,74.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
                 </path>
             </svg>
-        </>
+        </div>
     );
 }
 
