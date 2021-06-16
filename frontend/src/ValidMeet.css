@@ -1,0 +1,9 @@
+.valid-meet-light {
+	color: var(--l1);
+	background-color: var(--l2);
+}
+
+.valid-meet-dark{
+	color: var(--d1);
+	background-color: var(--d2);
+}
