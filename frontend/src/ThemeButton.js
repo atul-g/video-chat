@@ -14,7 +14,7 @@ const ThemeButton = () => {
         <div id="theme-button">
             <label className="switch">
                 <input type="checkbox" onClick={toggleTheme}/>
-                <span className="slider round"></span>
+                <span className={ darkMode ? "slider slider-dark slider-round" : "slider slider-light slider-round" }></span>
             </label>
         </div>
     );

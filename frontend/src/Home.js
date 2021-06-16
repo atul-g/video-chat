@@ -24,7 +24,7 @@ const Home = () => {
     return (
         <>
             <ThemeButton />
-            <div id="home-card" className={darkMode ? "home" : "home-dark"}>
+            <div id="home-card" className={darkMode ? "home-dark" : "home"}>
                 <Row>
                     <Col sm={12} lg={6}>
                         <div className="intro-text">
