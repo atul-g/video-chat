@@ -1,9 +1,9 @@
 
 export const connectToNewUser = (peer, userId, stream) => {
     const call = peer.call(userId, stream);
-    console.log("Call object: ", call)
     const vidTag = document.createElement('video')
     vidTag.autoplay = true;
+    vidTag.classList.add('video-element')
     console.log("Video Tag created!")
     call.on('stream', userVideoStream => {
         console.log("USERSTREAM: ", userVideoStream)

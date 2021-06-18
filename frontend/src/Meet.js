@@ -25,9 +25,7 @@ const Meet = () => {
     })
 
     return (
-        <div>
             <ValidMeet meetId={meetId} socket={socket} peer={peer} />
-        </div>
     );
 }
 

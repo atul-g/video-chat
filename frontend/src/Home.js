@@ -14,7 +14,6 @@ import './Home.css'
 const Home = () => {
     const history = useHistory();
     const { darkMode } = useContext(ThemeContext);
-    console.log(darkMode)
 
     const handleJoinMeet = () => {
         let inputMeetId = document.querySelector('[name="input-meetid"]').value;
@@ -49,7 +48,7 @@ const Home = () => {
 
                             <input id="input-meetid" type="text" name="input-meetid" placeholder=" Enter a Meet ID" />
                             <br />
-                            <Button variant={"outline-"+`${buttonVariant}`} size="lg" block type="button" onClick={handleJoinMeet}>Join meet</Button>
+                            <Button variant={`outline-${buttonVariant}`} size="lg" block type="button" onClick={handleJoinMeet}>Join meet</Button>
                         </div>
                     </Col>
                 </Row>

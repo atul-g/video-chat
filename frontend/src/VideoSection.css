@@ -1,0 +1,51 @@
+#video-grid {
+	flex: 0.9;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 20%;
+	justify-content: center;
+	align-items: center;
+}
+
+.video-element {
+	margin: 1rem;
+	height: 249px;
+	width: 332px;
+	border-radius: 5px;
+	background: linear-gradient(to bottom right, #0d6efd, #10e7dc);
+	padding: 3px;
+}
+
+
+/* TODO: set different margin and  sizes for different screen sizes */
+@media only screen and (min-width: 700px) and (max-width: 1300px) {
+	#video-grid {
+		margin: 0 10%;
+	}
+}
+
+@media only screen and (min-width: 400px) and (max-width: 700px) {
+	#video-grid {
+		margin: 0;
+	}
+
+	.video-element {
+		margin: 0.3rem;
+		height: 132px;
+		width: 177px;
+		padding: 2px;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	#video-grid {
+		margin: 0;
+	}
+
+	.video-element {
+		margin: 0.2rem;
+		height: 129px;
+		width: 172px;
+		padding: 2px;
+	}
+}

@@ -7,3 +7,20 @@
 	color: var(--d1);
 	background-color: var(--d2);
 }
+
+.valid-meet-section {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.themebutton-flex {
+	flex: 0.1;
+}
+
+.valid-meet-flex-column {
+	flex: 0.9;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}

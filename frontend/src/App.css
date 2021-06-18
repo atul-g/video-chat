@@ -9,8 +9,8 @@ html, body, #root {
 	--l2: white; /* l2 - 'light theme colour 2' - var(--l2) in this case */
 	--l3: black; /* this is for font in light theme */
 
-	--d1: #10e7dc;
-	--d2: black;
+	--d1: #10e7dc; /* cyan-ish blue */
+	--d2: #2c2c2c; /* crayon black color */
 	--d3: white; /* main font */
 }
 

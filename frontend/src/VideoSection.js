@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import * as utils from './utils.js'
 
+import './VideoSection.css'
+
 const VideoSection = ({meetId, socket, peer}) => {
     //this is called after component is rendered
     useEffect(() => {
@@ -9,6 +11,7 @@ const VideoSection = ({meetId, socket, peer}) => {
 
         const myVidElement = document.createElement('video')
         myVidElement.setAttribute("id", "my-video-tag")
+        myVidElement.classList.add('video-element')
         myVidElement.autoplay = true;
         myVidElement.muted = true;
 
@@ -26,6 +29,7 @@ const VideoSection = ({meetId, socket, peer}) => {
                 console.log("We have answered the call!", stream)
                 const video = document.createElement('video');
                 video.autoplay = true;
+                video.classList.add('video-element')
                 call.on('stream', userVideoStream => {
                     utils.addVideoStream(video, userVideoStream)
                 });
@@ -63,7 +67,6 @@ const VideoSection = ({meetId, socket, peer}) => {
 
     return (
         <>
-            <h1>Meeting in progress!</h1>
             <div id="video-grid">
             </div>
         </>
