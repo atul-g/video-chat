@@ -30,7 +30,7 @@ const ValidMeet = ({meetId, socket, peer}) => {
                 <VideoSection meetId={meetId} socket={socket} peer={peer} />
                 <BottomBar meetId={meetId} />
             </div>
-            <ChatSection />
+            <ChatSection socket={socket}/>
         </div>
     );
 }

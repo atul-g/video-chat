@@ -23,11 +23,7 @@ app.get('*', (req, res) => {
 
 
 io.on('connection', socket => {
-    console.log('Server: Client Connected!')
-
-    socket.on('disconnect', () => {
-        console.log('Server: Client Disconnected')
-    })
+    //console.log('Server: Client Connected!')
 
     //tells all other clients in a room with meetId, that a user with userId
     //has joined
@@ -37,6 +33,7 @@ io.on('connection', socket => {
         //this gets current number of clients in a room
         //Maybe put this above the .join() for a room limit check
         let clientNums = io.sockets.adapter.rooms.get(meetId).size
+        //console.log(clientNums)
         console.log(io.sockets.adapter.rooms)
 
         //informs all clients of a socket room except the sending client 
@@ -44,6 +41,25 @@ io.on('connection', socket => {
         //note: this .broadcast() is not needed here, see:
         //https://stackoverflow.com/a/66732606/11105624
         socket.to(meetId).emit('user-connected', userId)
+
+        socket.on('message', messageObject => {
+            //adding socket.to() sends message to all other sockets except
+            //the sending socket. Instead, if you use io.to() here, it sends
+            //messages to all sockets in the room since it's coming from the
+            //server. We will want to send message to all user, including
+            //the socket which sent the message because we have a socket.event
+            //to add the user sent message as well to the sending user's
+            //chat section
+            io.to(meetId).emit('newMessage', messageObject);
+        })
+
+        socket.on('disconnect', () => {
+            //console.log('Server: Client Disconnected')
+            //at this point, the following message won't be sent to the
+            //disconnecting socket as it is already closed.
+            io.to(meetId).emit('user-left', userId);
+        })
+
     })
 })
 

@@ -24,9 +24,9 @@ const VideoSection = ({meetId, socket, peer}) => {
             utils.addVideoStream(myVidElement, stream)
 
             peer.on('call', call => {
-                console.log("Call received, answering call now")
+                //console.log("Call received, answering call now")
                 call.answer(stream);
-                console.log("We have answered the call!", stream)
+                //console.log("We have answered the call!", stream)
                 const video = document.createElement('video');
                 video.autoplay = true;
                 video.classList.add('video-element')
@@ -36,20 +36,27 @@ const VideoSection = ({meetId, socket, peer}) => {
             })
 
             socket.on('user-connected', (userId) => {
-                console.log(`${userId} JOINED THE ROOM!`)
+                //console.log(`${userId} JOINED THE ROOM!`)
                 //we add the event here itself. Why? When a new user
                 //connects, we send him OUR STREAM, which is represented by
                 //stream below.
-                console.log(userId, stream)
+                //console.log(userId, stream)
                 utils.connectToNewUser(peer, userId, stream)
                 //connecToNewUser calls the other guy who just joined the room
                 //and creates a video tag and attaches HIS STREAM to out
                 //video tag.
             })
+
+            socket.on('user-left', (userId) => {
+                let userVidElement = document.getElementsByClassName(userId)[0];
+                if (userVidElement) {
+                    userVidElement.remove();
+                }
+            })
         })
 
         peer.on('open', id => {
-            console.log(`${id} connected to Peer server, emitting join-room!`)
+            //console.log(`${id} connected to Peer server, emitting join-room!`)
             socket.emit('join-room', meetId, id);
         })
 

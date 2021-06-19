@@ -1,10 +1,15 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from './contexts/ThemeContext'
+import { useHistory } from 'react-router-dom';
+
+import * as utils from './utils.js'
 
 import './BottomBar.css'
 
 const BottomBar = ({meetId}) => {
     const { darkMode } = useContext(ThemeContext);
+    let history = useHistory();
+
 
     let bottomBarTheme, bottomButtonTheme, toastTheme;
     if(darkMode) {
@@ -17,15 +22,6 @@ const BottomBar = ({meetId}) => {
         toastTheme = "toast toast-light"
     }
 
-    const toggleChat = () => {
-        const chatSection = document.getElementById("chat-section")
-
-        if(chatSection.style.width === "0px" || chatSection.style.width === "") {
-            chatSection.style.width = "300px"
-        } else {
-            chatSection.style.width = "0px"
-        }
-    }
 
     const copyTextToClipboard = () => {
         navigator.clipboard.writeText(meetId).then(() => {
@@ -44,6 +40,10 @@ const BottomBar = ({meetId}) => {
         });
     }
 
+    const leaveMeet = () => {
+        history.push("/");
+    }
+
     return (
         <div id="bottom-bar" className={bottomBarTheme}>
             <div id="toast-success" className={toastTheme}>Meet ID has been copied to clipboard!</div>
@@ -51,16 +51,16 @@ const BottomBar = ({meetId}) => {
             <div className={bottomButtonTheme} onClick={copyTextToClipboard}>
                 <i className="fas fa-clipboard fa-2x"></i>
             </div>
-            <div className={bottomButtonTheme} onClick={toggleChat}>
+            <div className={bottomButtonTheme} onClick={utils.toggleChat}>
                 <i className="fas fa-comments fa-2x"></i>
             </div>
-            <div className={bottomButtonTheme} onClick={toggleChat}>
-                <i className="fas fa-volume-up fa-2x"></i>
+            <div className={bottomButtonTheme} onClick={utils.toggleMute}>
+                <i className="fas fa-microphone-slash fa-2x"></i>
             </div>
-            <div className={bottomButtonTheme} onClick={toggleChat}>
-                <i className="fas fa-video fa-2x"></i>
+            <div className={bottomButtonTheme} onClick={utils.toggleVideo}>
+                <i className="fas fa-video-slash fa-2x"></i>
             </div>
-            <div className={bottomButtonTheme} onClick={toggleChat}>
+            <div className={bottomButtonTheme} style={{color: "red"}} onClick={leaveMeet}>
                 <i className="fas fa-phone-slash fa-2x"></i>
             </div>
         </div>

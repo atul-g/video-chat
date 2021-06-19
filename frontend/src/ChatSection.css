@@ -65,14 +65,18 @@
 	flex: 0.04;
 	margin: 1rem;
 	border-radius: 4px;
+	background: transparent;
+	font-weight: bold;
 }
 
 .username-input-light {
-	border: 4px solid var(--l1);
+	border: 3px solid var(--l1);
+	color: var(--l3);
 }
 
 .username-input-dark {
-	border: 4px solid var(--d1);
+	border: 3px solid var(--d1);
+	color: var(--d3);
 }
 
 
@@ -81,10 +85,30 @@
 	flex: 0.9;
 }
 
+.message-list {
+	list-style: none;
+	padding: 0 1rem;
+}
+
+.single-message {
+	margin: 0.3rem 0;
+}
+
+
 /** message input **/
 #user-message {
 	flex: 0.06;
 	margin: 1rem;
 	border-radius: 4px;
+	background: transparent;
+}
+
+/** change placeholder color of inputs based on theme **/
+.username-input-dark::placeholder {
+	color: silver;
+}
+
+.username-input-light::placeholder {
+	color: gray;
 }
 
