@@ -9,7 +9,7 @@ const peerServer = ExpressPeerServer(server, {
     debug: true
 })
 
-app.use(express.static(path.join(__dirname, '/../frontend/build')))
+app.use(express.static(path.join(__dirname, '/frontend/build')))
 //app.use(express.static(path.join(__dirname, '/../frontend/public')))
 
 app.use('/peerjs', peerServer);
@@ -18,7 +18,7 @@ app.use('/peerjs', peerServer);
 
 //any other url is handled by react routers
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/../frontend/build/index.html'))
+    res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
 })
 
 

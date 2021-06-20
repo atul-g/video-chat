@@ -39,7 +39,7 @@
 /** toast **/
 .toast {
 	visibility: hidden;
-	min-width: 200px;
+	width: max-content; /* size as much as the contained content */
 	text-align: center;
 	border-radius: 5px;
 	padding: 5px;
@@ -47,18 +47,19 @@
 	z-index: 1;
 	top: 30px;
 	left: 50%;
+	font-size: 1.5rem;
 	transform: translateX(-50%); /* this along with left: helps in centering */
 }
 
 .toast-light {
 	background-color: var(--l2);
-	color: var(--l1);
+	color: var(--l3);
 	box-shadow: 0 0 0px 2px var(--l1);
 }
 
 .toast-dark {
 	background-color: var(--d2);
-	color: var(--d1);
+	color: var(--d3);
 	box-shadow: 0 0 0px 2px var(--d1);
 }
 
@@ -114,6 +115,10 @@
 
 	.bottom-bar-dark {
 		box-shadow: 0 0 0px 4px var(--d1);
+	}
+
+	.toast {
+		font-size: 1rem;
 	}
 }
 

@@ -42,3 +42,18 @@
 ### Peerjs
 1. For server: `npm i peer` - installs PeerServer
 2. For client: `npm i peerjs`
+
+# Deployment
+1. I had to change the project structure to what it currently is. The
+    backend itself contains the frontend directory.
+2. The package.json of backend had to be modified to allow a "heroku-postbuild"
+    script where we make npm install and build commands to run inside frontned
+    directory.
+3. Install heroku-cli, I did using snap. Inside the project folder, run
+    `heroku create react-vid-app`. This adds two extra remotes under the
+    name heroku.
+4. Run `git push heroku main`. This pushes the latest commit in local main
+    branch to heroku remote assigned to us. After that, an automatic build
+    happens and web is live and running.
+5. heroku requires a "package.json" file in root directory to identify the
+    webpack with which the project should be built. In our case, it's node.

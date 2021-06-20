@@ -21,7 +21,7 @@ const Meet = () => {
     let peer = new Peer(undefined, {
         path: '/peerjs',    //we got this from server.js
         host: '/',  //whatever host this is being hosted on - heroku/local etc
-        port: '5000'    //nodejs server is on 5000, change to 443 in heroku
+        port: '443'    //nodejs server is on 5000, change to 443 in heroku
     })
 
     return (

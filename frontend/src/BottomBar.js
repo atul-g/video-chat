@@ -46,7 +46,7 @@ const BottomBar = ({meetId}) => {
 
     return (
         <div id="bottom-bar" className={bottomBarTheme}>
-            <div id="toast-success" className={toastTheme}>Meet ID has been copied to clipboard!</div>
+            <div id="toast-success" className={toastTheme}>Meet ID copied to clipboard</div>
             <div id="toast-fail" className={toastTheme}>There was an error trying to copy meet-id to clipboard, instead, copy the URL manually.</div>
             <div className={bottomButtonTheme} onClick={copyTextToClipboard}>
                 <i className="fas fa-clipboard fa-2x"></i>
