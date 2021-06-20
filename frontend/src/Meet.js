@@ -3,14 +3,14 @@ import { validate as uuidValidate } from 'uuid';
 import io from 'socket.io-client'
 import  Peer from 'peerjs'
 
-import InvalidMeet from './InvalidMeet'
+import Error from './Error'
 import ValidMeet from './ValidMeet'
 
 const Meet = () => {
     const { meetId } = useParams(); //get the meetId passed in url as param
 
     if(uuidValidate(meetId) === false) {
-        return <InvalidMeet />;
+        return <Error />;
     }
 
     //leaving the arguemnt of io as blank, this will make it connect to the
